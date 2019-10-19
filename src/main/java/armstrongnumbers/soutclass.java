@@ -3,14 +3,16 @@ package armstrongnumbers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArmstrongNumbers {
-    public static boolean isArmstrongNumber(int number) {
-        int tempnumber = number;
-        List<Integer> digits = new ArrayList<>();
+public class soutclass {
+    public static void main(String[] args) {
+        int number = 1890;
+        List<Integer> digits = new ArrayList<Integer>();
         while (number > 0) {
             digits.add(number%10);
             number/=10;
         }
+        System.out.println(digits);
+
         double armstrongNumber = 0;
         for(int i:digits) {
             double a;
@@ -18,11 +20,5 @@ public class ArmstrongNumbers {
             armstrongNumber += a;
         }
         System.out.println(armstrongNumber);
-
-        if(armstrongNumber == tempnumber) {
-            return true;
-        } else
-            return false;
     }
-
 }
